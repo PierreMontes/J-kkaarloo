@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Schéma d'architecture de Jàkkaarloo (conseiller agricole multi-agents) -->
+  <defs>
+    <marker id="fleche" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#555"/>
+    </marker>
+    <style>
+      .titre  { font-size: 22px; font-weight: 700; fill: #1b5e20; }
+      .lbl    { font-size: 14px; font-weight: 600; }
+      .sub    { font-size: 12px; fill: #444; }
+      .flux   { stroke: #555; stroke-width: 2; fill: none; marker-end: url(#fleche); }
+      .note   { font-size: 12px; fill: #b71c1c; font-weight: 600; }
+    </style>
+  </defs>
+
+  <text x="460" y="34" text-anchor="middle" class="titre">Jàkkaarloo — architecture multi-agents</text>
+
+  <!-- Agriculteur -->
+  <rect x="360" y="60" width="200" height="52" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="460" y="82" text-anchor="middle" class="lbl">👨‍🌾 Agriculteur</text>
+  <text x="460" y="100" text-anchor="middle" class="sub">question en français simple</text>
+
+  <line x1="460" y1="112" x2="460" y2="150" class="flux"/>
+
+  <!-- Garde-fou -->
+  <rect x="590" y="150" width="270" height="46" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="725" y="170" text-anchor="middle" class="note">🛡️ before_model_callback</text>
+  <text x="725" y="187" text-anchor="middle" class="sub">garde-fou : dosages dangereux + injections</text>
+  <line x1="590" y1="173" x2="562" y2="173" class="flux"/>
+
+  <!-- Agent racine -->
+  <rect x="330" y="150" width="260" height="66" rx="10" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2.5"/>
+  <text x="460" y="178" text-anchor="middle" class="lbl">🧭 AGENT RACINE (orchestrateur)</text>
+  <text x="460" y="198" text-anchor="middle" class="sub">« jakkaarloo » — délégation pilotée par le LLM</text>
+
+  <!-- Flux vers sous-agents -->
+  <line x1="400" y1="216" x2="170" y2="280" class="flux"/>
+  <line x1="460" y1="216" x2="460" y2="280" class="flux"/>
+  <line x1="520" y1="216" x2="750" y2="280" class="flux"/>
+
+  <!-- Sous-agent diagnostic -->
+  <rect x="40" y="282" width="250" height="60" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="165" y="308" text-anchor="middle" class="lbl">🔬 diagnostic_agent</text>
+  <text x="165" y="328" text-anchor="middle" class="sub">« qu'est-ce qui attaque ma culture ? »</text>
+
+  <!-- Sous-agent météo -->
+  <rect x="335" y="282" width="250" height="60" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="460" y="308" text-anchor="middle" class="lbl">🌦️ weather_agent</text>
+  <text x="460" y="328" text-anchor="middle" class="sub">« quand semer / dois-je irriguer ? »</text>
+
+  <!-- Sous-agent marché -->
+  <rect x="630" y="282" width="250" height="60" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="755" y="308" text-anchor="middle" class="lbl">💰 market_agent</text>
+  <text x="755" y="328" text-anchor="middle" class="sub">« où et quand vendre ? »</text>
+
+  <!-- Flux vers outils -->
+  <line x1="165" y1="342" x2="165" y2="400" class="flux"/>
+  <line x1="460" y1="342" x2="460" y2="400" class="flux"/>
+  <line x1="755" y1="342" x2="755" y2="400" class="flux"/>
+
+  <!-- Outil diagnostic -->
+  <rect x="40" y="402" width="250" height="58" rx="8" fill="#f1f8e9" stroke="#558b2f" stroke-width="2"/>
+  <text x="165" y="424" text-anchor="middle" class="lbl">diagnose_crop_issue()</text>
+  <text x="165" y="440" text-anchor="middle" class="sub">base de règles locale + catalogue</text>
+  <text x="165" y="454" text-anchor="middle" class="sub">📷 photo (Gemini multimodal)</text>
+
+  <!-- Outil météo -->
+  <rect x="335" y="402" width="250" height="58" rx="8" fill="#f1f8e9" stroke="#558b2f" stroke-width="2"/>
+  <text x="460" y="426" text-anchor="middle" class="lbl">get_weather_forecast()</text>
+  <text x="460" y="446" text-anchor="middle" class="sub">API Open-Meteo (gratuite, sans clé)</text>
+
+  <!-- Toolset MCP -->
+  <rect x="630" y="402" width="250" height="58" rx="8" fill="#ede7f6" stroke="#4527a0" stroke-width="2"/>
+  <text x="755" y="426" text-anchor="middle" class="lbl">McpToolset (tool_filter)</text>
+  <text x="755" y="446" text-anchor="middle" class="sub">client MCP · streamable-http</text>
+
+  <!-- Serveur MCP -->
+  <line x1="755" y1="460" x2="755" y2="520" class="flux"/>
+  <rect x="600" y="522" width="310" height="80" rx="10" fill="#d1c4e9" stroke="#311b92" stroke-width="2.5"/>
+  <text x="755" y="548" text-anchor="middle" class="lbl">🖥️ SERVEUR MCP « marché-agricole »</text>
+  <text x="755" y="568" text-anchor="middle" class="sub">FastMCP · localhost:8080/mcp</text>
+  <text x="755" y="586" text-anchor="middle" class="sub">get_market_prices() · get_crop_calendar()</text>
+
+  <!-- Légende concepts -->
+  <rect x="40" y="514" width="500" height="96" rx="8" fill="#fafafa" stroke="#bbb" stroke-width="1"/>
+  <text x="55" y="534" class="lbl">Concepts démontrés :</text>
+  <text x="55" y="554" class="sub">① Multi-agents ADK (racine + 3 sous-agents)  ② Serveur MCP (marché)</text>
+  <text x="55" y="574" class="sub">③ Sécurité (garde-fou + tool_filter + secrets hors code)  ④ Déployabilité (Docker)</text>
+  <text x="55" y="594" class="sub">⑤ Diagnostic multimodal — photo ancrée dans la base de règles</text>
+</svg>

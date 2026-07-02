@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "devise": "FCFA/kg",
+    "date_maj": "2026-06-15",
+    "source": "Données de DÉMONSTRATION inspirées des marchés sénégalais (non contractuelles).",
+    "marches": [
+      "Marché Castors (Dakar)",
+      "Marché Ocass (Touba)",
+      "Marché central (Kaolack)",
+      "Marché de Saint-Louis"
+    ]
+  },
+  "cultures": {
+    "arachide": {
+      "nom_affiche": "Arachide",
+      "prix_par_marche": {
+        "Marché Castors (Dakar)": 420,
+        "Marché Ocass (Touba)": 390,
+        "Marché central (Kaolack)": 405,
+        "Marché de Saint-Louis": 435
+      },
+      "tendance_30j": "hausse",
+      "variation_30j_pct": 6.5,
+      "calendrier": {
+        "semis": "juin – juillet (début des pluies)",
+        "recolte": "octobre – novembre",
+        "duree_cycle_jours": 120,
+        "note": "Culture pluviale majeure du Bassin arachidier. Semer dès les premières pluies utiles (>20 mm)."
+      }
+    },
+    "mil": {
+      "nom_affiche": "Mil",
+      "prix_par_marche": {
+        "Marché Castors (Dakar)": 300,
+        "Marché Ocass (Touba)": 265,
+        "Marché central (Kaolack)": 280,
+        "Marché de Saint-Louis": 310
+      },
+      "tendance_30j": "stable",
+      "variation_30j_pct": 1.2,
+      "calendrier": {
+        "semis": "juin – juillet",
+        "recolte": "septembre – octobre",
+        "duree_cycle_jours": 90,
+        "note": "Céréale rustique, tolérante à la sécheresse. Adaptée aux zones à faible pluviométrie."
+      }
+    },
+    "mais": {
+      "nom_affiche": "Maïs",
+      "prix_par_marche": {
+        "Marché Castors (Dakar)": 245,
+        "Marché Ocass (Touba)": 220,
+        "Marché central (Kaolack)": 230,
+        "Marché de Saint-Louis": 250
+      },
+      "tendance_30j": "baisse",
+      "variation_30j_pct": -3.8,
+      "calendrier": {
+        "semis": "juin – juillet",
+        "recolte": "septembre – octobre",
+        "duree_cycle_jours": 100,
+        "note": "Exigeant en eau et en azote. Éviter les sols qui se ressuient mal."
+      }
+    },
+    "riz local": {
+      "nom_affiche": "Riz local (paddy)",
+      "prix_par_marche": {
+        "Marché Castors (Dakar)": 350,
+        "Marché Ocass (Touba)": 330,
+        "Marché central (Kaolack)": 340,
+        "Marché de Saint-Louis": 315
+      },
+      "tendance_30j": "hausse",
+      "variation_30j_pct": 4.1,
+      "calendrier": {
+        "semis": "juillet – août (hivernage) ; février (contre-saison irriguée)",
+        "recolte": "novembre – décembre",
+        "duree_cycle_jours": 130,
+        "note": "Vallée du fleuve Sénégal : double cycle possible en irrigué. Besoin d'eau élevé."
+      }
+    },
+    "niebe": {
+      "nom_affiche": "Niébé (haricot)",
+      "prix_par_marche": {
+        "Marché Castors (Dakar)": 650,
+        "Marché Ocass (Touba)": 600,
+        "Marché central (Kaolack)": 620,
+        "Marché de Saint-Louis": 670
+      },
+      "tendance_30j": "hausse",
+      "variation_30j_pct": 8.9,
+      "calendrier": {
+        "semis": "juillet – août",
+        "recolte": "octobre",
+        "duree_cycle_jours": 75,
+        "note": "Légumineuse fixatrice d'azote, cycle court. Bonne culture d'association avec le mil."
+      }
+    },
+    "tomate": {
+      "nom_affiche": "Tomate",
+      "prix_par_marche": {
+        "Marché Castors (Dakar)": 400,
+        "Marché Ocass (Touba)": 360,
+        "Marché central (Kaolack)": 350,
+        "Marché de Saint-Louis": 300
+      },
+      "tendance_30j": "baisse",
+      "variation_30j_pct": -12.5,
+      "calendrier": {
+        "semis": "octobre – décembre (saison sèche fraîche)",
+        "recolte": "février – avril",
+        "duree_cycle_jours": 110,
+        "note": "Maraîchage de contre-saison. Forte chute des prix en pleine récolte (excès d'offre)."
+      }
+    },
+    "oignon": {
+      "nom_affiche": "Oignon",
+      "prix_par_marche": {
+        "Marché Castors (Dakar)": 500,
+        "Marché Ocass (Touba)": 460,
+        "Marché central (Kaolack)": 470,
+        "Marché de Saint-Louis": 420
+      },
+      "tendance_30j": "stable",
+      "variation_30j_pct": -0.5,
+      "calendrier": {
+        "semis": "novembre – décembre",
+        "recolte": "mars – avril",
+        "duree_cycle_jours": 120,
+        "note": "Production concentrée dans la vallée (Saint-Louis). Bien stocker pour vendre hors récolte."
+      }
+    }
+  }
+}

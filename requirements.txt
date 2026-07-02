@@ -1,0 +1,13 @@
+# Dépendances de Jàkkaarloo — conseiller agricole multi-agents
+# Versions minimales validées ; on laisse pip résoudre les sous-dépendances.
+
+google-adk>=1.0.0        # Framework d'agents (LlmAgent, McpToolset, callbacks)
+mcp>=1.2.0               # Protocole MCP + FastMCP (serveur de marché)
+requests>=2.31.0         # Appels HTTP vers l'API météo Open-Meteo (sans clé)
+python-dotenv>=1.0.0     # Chargement des variables d'environnement depuis .env
+truststore>=0.9.0        # Utilise le magasin de certificats de l'OS (proxys TLS d'entreprise)
+aiohttp>=3.9.0           # Transport async pour le client MCP (évite un warning mTLS)
+fastapi>=0.115.0         # Backend de l'interface web (web_app/main.py)
+uvicorn>=0.30.0          # Serveur ASGI pour lancer le backend FastAPI
+sqlalchemy>=2.0.0        # Sessions PERSISTANTES (DatabaseSessionService, via aiosqlite)
+

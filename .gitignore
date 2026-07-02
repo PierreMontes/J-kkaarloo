@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------------------
+# Fichiers à NE JAMAIS versionner.
+# La première section protège les secrets : c'est une exigence du concours.
+# ---------------------------------------------------------------------------
+
+# --- Secrets & configuration locale (CRITIQUE) -----------------------------
+.env
+.env.*
+!.env.example
+
+# --- Environnements virtuels Python ----------------------------------------
+.venv/
+venv/
+env/
+
+# --- Caches & artefacts Python ---------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# --- Journaux & fichiers temporaires ---------------------------------------
+*.log
+_install_log.txt
+
+# --- Sessions ADK (base locale créée par `adk web`) ------------------------
+*.db
+.adk/
+
+# --- Données locales de l'interface web (users + sessions persistées) -------
+web_app/data/
+
+# --- Divers éditeurs / OS --------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

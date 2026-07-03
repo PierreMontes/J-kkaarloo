@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Jàkkaarloo — conseiller agricole</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- ============================ SIDEBAR ============================ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-logo" id="brand-logo"></span>
+        <div>
+          <div class="brand-name">Jàkkaarloo</div>
+          <div class="brand-sub">Conseiller agricole IA</div>
+        </div>
+      </div>
+
+      <button class="btn-new" id="btn-new"><span class="ico" id="ico-new"></span> Nouvelle session</button>
+
+      <div class="side-scroll">
+        <div class="side-head">
+          <span>Profils</span>
+          <button class="icon-mini" id="btn-add-profile" title="Ajouter un profil"><span id="ico-adduser"></span></button>
+        </div>
+        <div id="profiles-list" class="profiles-list"></div>
+
+        <div class="side-head"><span id="sessions-label">Sessions</span></div>
+        <div id="sessions-list" class="sessions-list"></div>
+        <p id="sessions-empty" class="sessions-empty" hidden>Aucune session — commencez une conversation.</p>
+      </div>
+    </aside>
+
+    <div class="scrim" id="scrim" hidden></div>
+
+    <!-- ============================= MAIN ============================= -->
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn btn-menu" id="btn-menu" title="Menu"><span id="ico-menu"></span></button>
+        <span class="topbar-logo" id="topbar-logo"></span>
+        <div class="topbar-ctx">
+          <div class="topbar-title">Jàkkaarloo</div>
+          <div class="topbar-sub" id="topbar-sub">Conseiller agricole IA</div>
+        </div>
+        <div class="topbar-right">
+          <button class="btn-ghost" id="btn-new-2"><span class="ico" id="ico-new2"></span> Nouvelle session</button>
+          <div class="lang-toggle" id="lang-toggle">
+            <span class="lang-ico" id="ico-lang"></span>
+            <button data-lang="fr" class="active">FR</button>
+            <button data-lang="wo">Wolof</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="chips-row" id="chips-row"></div>
+
+      <div id="apercu-photo" class="apercu-photo" hidden>
+        <img id="apercu-img" alt="Aperçu" />
+        <button id="retirer-photo" class="retirer-photo" title="Retirer"><span id="ico-close"></span></button>
+      </div>
+
+      <form id="formulaire" class="composer">
+        <label class="icon-btn photo-lbl" title="Joindre une photo">
+          <span id="ico-cam"></span>
+          <input type="file" id="input-photo" accept="image/*" hidden />
+        </label>
+        <textarea id="input-message" class="composer-input" rows="1"
+          placeholder="Écrivez votre question… (français ou wolof)"></textarea>
+        <button type="submit" id="btn-send" class="btn-send" title="Envoyer"><span id="ico-send"></span></button>
+      </form>
+      <p class="disclaimer">Conseils indicatifs — à confirmer auprès d'un professionnel (ANCAR / ISRA).</p>
+    </main>
+  </div>
+
+  <!-- ========================= MODAL PROFIL ========================= -->
+  <div class="modal-overlay" id="modal-user" hidden>
+    <div class="modal">
+      <div class="modal-logo" id="modal-logo"></div>
+      <h2 id="modal-title">Bienvenue sur Jàkkaarloo</h2>
+      <p class="modal-sub">Choisissez un profil, ou créez-en un nouveau.</p>
+
+      <div id="users-existants" class="users-existants"></div>
+
+      <form id="form-user" class="form-user">
+        <input type="text" id="in-name" class="input-f" placeholder="Nom (ex. Amadou Diop)" autocomplete="off" />
+        <input type="text" id="in-region" class="input-f" placeholder="Région / ville (ex. Kaolack)" autocomplete="off" />
+        <input type="text" id="in-crops" class="input-f" placeholder="Cultures (ex. Maïs, Arachide, Mil)" autocomplete="off" />
+        <button type="submit" class="btn-primary">Créer le profil</button>
+      </form>
+      <button id="modal-close" class="modal-close" hidden>Annuler</button>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

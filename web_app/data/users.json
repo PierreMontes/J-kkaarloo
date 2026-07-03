@@ -1,0 +1,18 @@
+[
+  {
+    "id": "u-a6e68bec7613",
+    "name": "Pierre",
+    "created_at": "2026-07-02T15:27:09.978066+00:00"
+  },
+  {
+    "id": "u-79d398792efd",
+    "name": "Amadou Diop",
+    "region": "Kaolack",
+    "crops": [
+      "Maïs",
+      "Arachide",
+      "Mil"
+    ],
+    "created_at": "2026-07-02T17:15:57.086479+00:00"
+  }
+]
